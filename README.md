@@ -279,8 +279,6 @@ yosys synth.ys
 ├── tb/
 │   ├── tb_riscv_full.v
 │   └── tb_fibonacci.v
-├── synth/
-│   └── synth.ys
 ├── waveforms/
 │   ├── full_test.vcd
 │   ├── fibonacci_loop.vcd
