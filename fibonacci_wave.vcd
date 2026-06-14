@@ -1,5 +1,5 @@
 $date
-	Sun Jun 14 11:21:25 2026
+	Sun Jun 14 23:56:59 2026
 $end
 $version
 	Icarus Verilog
@@ -133,12 +133,62 @@ $upscope $end
 $upscope $end
 $upscope $end
 $upscope $end
+$scope module tb_fibonacci $end
+$scope module dut $end
+$scope module dpu $end
+$scope module rf $end
+$var reg 32 _ \regs[0] [31:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$upscope $end
+$scope module tb_fibonacci $end
+$scope module dut $end
+$scope module dpu $end
+$scope module rf $end
+$var reg 32 ` \regs[1] [31:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$upscope $end
+$scope module tb_fibonacci $end
+$scope module dut $end
+$scope module dpu $end
+$scope module rf $end
+$var reg 32 a \regs[2] [31:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$upscope $end
+$scope module tb_fibonacci $end
+$scope module dut $end
+$scope module dpu $end
+$scope module rf $end
+$var reg 32 b \regs[3] [31:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$upscope $end
+$scope module tb_fibonacci $end
+$scope module dut $end
+$scope module dpu $end
+$scope module rf $end
+$var reg 32 c \regs[10] [31:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$upscope $end
 $enddefinitions $end
 $comment Show the parameter values. $end
 $dumpall
 $end
 #0
 $dumpvars
+b0 c
+b0 b
+b0 a
+b0 `
+b0 _
 b100000000 ^
 bx ]
 bx \
@@ -240,6 +290,11 @@ b0 K
 b100000000 M
 1!
 #10000
+b0 c
+b0 b
+b0 a
+b0 `
+b0 _
 b100000 T
 0!
 #15000
@@ -253,6 +308,7 @@ b1011 F
 1$
 0"
 #20000
+b0 `
 0!
 #25000
 b1 >
@@ -282,6 +338,7 @@ b100 A
 b100 X
 1!
 #30000
+b1 a
 0!
 #35000
 b1000 >
@@ -311,6 +368,7 @@ b1000 A
 b1000 X
 1!
 #40000
+b1000 c
 0!
 #45000
 b1 >
@@ -352,6 +410,7 @@ b1100 A
 b1100 X
 1!
 #50000
+b1 b
 0!
 #55000
 b1 >
@@ -391,6 +450,7 @@ b10000 A
 b10000 X
 1!
 #60000
+b1 `
 0!
 #65000
 b10 ;
@@ -408,6 +468,7 @@ b10100 A
 b10100 X
 1!
 #70000
+b1 a
 0!
 #75000
 b111 >
@@ -456,6 +517,7 @@ b110 J
 b111 @
 b111 H
 b111 S
+b111 c
 0!
 #85000
 b1 >
@@ -543,6 +605,7 @@ b100000 A
 b100000 X
 1!
 #100000
+b10 b
 0!
 #105000
 b1 >
@@ -579,6 +642,7 @@ b10000 A
 b10000 X
 1!
 #110000
+b1 `
 0!
 #115000
 b10 >
@@ -604,6 +668,7 @@ b10100 A
 b10100 X
 1!
 #120000
+b10 a
 0!
 #125000
 b110 >
@@ -652,6 +717,7 @@ b101 J
 b110 @
 b110 H
 b110 S
+b110 c
 0!
 #135000
 b1 >
@@ -739,6 +805,7 @@ b100000 A
 b100000 X
 1!
 #150000
+b11 b
 0!
 #155000
 b10 >
@@ -778,6 +845,7 @@ b10000 A
 b10000 X
 1!
 #160000
+b10 `
 0!
 #165000
 b11 >
@@ -803,6 +871,7 @@ b10100 A
 b10100 X
 1!
 #170000
+b11 a
 0!
 #175000
 b101 >
@@ -851,6 +920,7 @@ b100 J
 b101 @
 b101 H
 b101 S
+b101 c
 0!
 #185000
 b1 >
@@ -938,6 +1008,7 @@ b100000 A
 b100000 X
 1!
 #200000
+b101 b
 0!
 #205000
 b11 >
@@ -977,6 +1048,7 @@ b10000 A
 b10000 X
 1!
 #210000
+b11 `
 0!
 #215000
 b101 >
@@ -1002,6 +1074,7 @@ b10100 A
 b10100 X
 1!
 #220000
+b101 a
 0!
 #225000
 b100 >
@@ -1047,6 +1120,7 @@ b11 J
 b100 @
 b100 H
 b100 S
+b100 c
 0!
 #235000
 b1 >
@@ -1134,6 +1208,7 @@ b100000 A
 b100000 X
 1!
 #250000
+b1000 b
 0!
 #255000
 b101 >
@@ -1173,6 +1248,7 @@ b10000 A
 b10000 X
 1!
 #260000
+b101 `
 0!
 #265000
 b1000 >
@@ -1198,6 +1274,7 @@ b10100 A
 b10100 X
 1!
 #270000
+b1000 a
 0!
 #275000
 b11 >
@@ -1246,6 +1323,7 @@ b10 J
 b11 @
 b11 H
 b11 S
+b11 c
 0!
 #285000
 b1 >
@@ -1333,6 +1411,7 @@ b100000 A
 b100000 X
 1!
 #300000
+b1101 b
 0!
 #305000
 b1000 >
@@ -1372,6 +1451,7 @@ b10000 A
 b10000 X
 1!
 #310000
+b1000 `
 0!
 #315000
 b1101 >
@@ -1397,6 +1477,7 @@ b10100 A
 b10100 X
 1!
 #320000
+b1101 a
 0!
 #325000
 b10 >
@@ -1445,6 +1526,7 @@ b1 J
 b10 @
 b10 H
 b10 S
+b10 c
 0!
 #335000
 1.
@@ -1527,6 +1609,7 @@ b100000 A
 b100000 X
 1!
 #350000
+b10101 b
 0!
 #355000
 b1101 >
@@ -1566,6 +1649,7 @@ b10000 A
 b10000 X
 1!
 #360000
+b1101 `
 0!
 #365000
 b10101 >
@@ -1591,6 +1675,7 @@ b10100 A
 b10100 X
 1!
 #370000
+b10101 a
 0!
 #375000
 b1 >
@@ -1639,6 +1724,7 @@ b0 J
 b1 @
 b1 H
 b1 S
+b1 c
 0!
 #385000
 b1 >
@@ -1726,6 +1812,7 @@ b100000 A
 b100000 X
 1!
 #400000
+b100010 b
 0!
 #405000
 b10101 >
@@ -1765,6 +1852,7 @@ b10000 A
 b10000 X
 1!
 #410000
+b10101 `
 0!
 #415000
 b100010 >
@@ -1790,6 +1878,7 @@ b10100 A
 b10100 X
 1!
 #420000
+b100010 a
 0!
 #425000
 b0 >
@@ -1838,6 +1927,7 @@ b11111111111111111111111111111111 J
 b0 @
 b0 H
 b0 S
+b0 c
 0!
 #435000
 b0 >

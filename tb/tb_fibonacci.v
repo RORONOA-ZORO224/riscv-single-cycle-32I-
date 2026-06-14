@@ -8,10 +8,16 @@ module tb_fibonacci;
     initial clk = 0;
     always #5 clk = ~clk;
 
-    initial begin
-        $dumpfile("fibonacci_wave.vcd");
-        $dumpvars(0, tb_fibonacci);
-    end
+  initial begin
+    $dumpfile("fibonacci_wave.vcd");
+    $dumpvars(0, tb_fibonacci);
+    // Force dump all register array elements
+    $dumpvars(0, tb_fibonacci.dut.dpu.rf.regs[0]);
+    $dumpvars(0, tb_fibonacci.dut.dpu.rf.regs[1]);
+    $dumpvars(0, tb_fibonacci.dut.dpu.rf.regs[2]);
+    $dumpvars(0, tb_fibonacci.dut.dpu.rf.regs[3]);
+    $dumpvars(0, tb_fibonacci.dut.dpu.rf.regs[10]);
+end
 
     // Watch PC and key registers every cycle
     initial begin
@@ -45,16 +51,15 @@ module tb_fibonacci;
         $display("  x1  = %0d  (expect 21 = fib[8])", dut.dpu.rf.regs[1]);
         $display("  x2  = %0d  (expect 34 = fib[9])", dut.dpu.rf.regs[2]);
         $display("  x10 = %0d  (expect 0  = counter done)", dut.dpu.rf.regs[10]);
-        $display("================================================");
+      
 
         if (dut.dpu.rf.regs[1] === 32'd21 &&
             dut.dpu.rf.regs[2] === 32'd34 &&
             dut.dpu.rf.regs[10] === 32'd0)
-            $display("  *** ALL PASS — FIBONACCI CORRECT ***");
+            $display("  *** EXPECTED RESULT ARRIVED-PASS ***");
         else
             $display("  *** FAIL — check branch logic ***");
 
-        $display("================================================");
         $finish;
     end
 

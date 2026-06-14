@@ -1,0 +1,9 @@
+# Compiled binaries
+fib_sim
+full_sim
+*_sim
+
+# VCD waveform files (too large)
+*.vcd
+
+

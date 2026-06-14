@@ -1,7 +1,6 @@
 `timescale 1ns / 1ps
 
-// FULL INSTRUCTION TESTBENCH
-// Tests all 22 original instructions from Gawtam's design
+// Tests all 22 original instructions from my design
 // Checks register values after each instruction executes
 
 module tb_riscv_full;
@@ -12,10 +11,17 @@ module tb_riscv_full;
     initial clk = 0;
     always #5 clk = ~clk;
 
-    initial begin
-        $dumpfile("full_test_wave.vcd");
-        $dumpvars(0, tb_riscv_full);
-    end
+   
+initial begin
+    $dumpfile("full_test_wave.vcd");
+    $dumpvars(0, tb_riscv_full);
+    // Force dump all register array elements
+    $dumpvars(0, tb_riscv_full.dut.dpu.rf.regs[0]);
+    $dumpvars(0, tb_riscv_full.dut.dpu.rf.regs[1]);
+    $dumpvars(0, tb_riscv_full.dut.dpu.rf.regs[6]);
+    $dumpvars(0, tb_riscv_full.dut.dpu.rf.regs[5]);
+    $dumpvars(0, tb_riscv_full.dut.dpu.rf.regs[10]);
+end
 
     // Print every cycle
     integer cycle;
@@ -26,7 +32,7 @@ module tb_riscv_full;
 
     always @(posedge clk) begin
         if (!reset)
-        $display("%5t  | %8h | %8h    | (see below)",
+        $display("%5t  | %8h | %8h   |",
             $time, dut.pc, dut.instruction);
     end
 
@@ -41,7 +47,7 @@ module tb_riscv_full;
 
         // ── FULL REGISTER DUMP ────────────────────────────────
         $display("");
-        $display("============================================");
+      
         $display("  FULL REGISTER DUMP AFTER 30 CYCLES");
         $display("============================================");
         $display("  x0  = %8d  (hardwired 0)",        dut.dpu.rf.regs[0]);
@@ -67,7 +73,7 @@ module tb_riscv_full;
 
         // x0 always 0
         if (dut.dpu.rf.regs[0] === 32'd0)
-            $display("  PASS: x0 = 0 [hardwired zero]");
+            $display("  PASS: x0 = 0 [zero Always]");
         else
             $display("  FAIL: x0 = %0d (must always be 0)", dut.dpu.rf.regs[0]);
 
