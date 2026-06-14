@@ -1,6 +1,6 @@
 # RISC-V RV32I Single-Cycle Processor
 
-A 32-bit RISC-V RV32I single-cycle processor implemented in Verilog HDL. Executes one complete instruction per clock cycle with full support for 47 RV32I instructions across all encoding formats.
+A 32-bit RISC-V RV32I single-cycle processor implemented in Verilog HDL. Executes one complete instruction per clock cycle with full support for 37 RV32I instructions across all encoding formats.
 
 Designed as part of a structured VLSI roadmap targeting RTL-to-GDSII implementation on SkyWater SKY130 130nm PDK via OpenLane.
 
@@ -8,7 +8,7 @@ Designed as part of a structured VLSI roadmap targeting RTL-to-GDSII implementat
 
 ## Features
 
-- Full RV32I instruction set (47 instructions)
+- Full RV32I instruction set (37 instructions)
 - Single-cycle execution — all phases complete in one clock period
 - 9-module modular RTL hierarchy
 - Negedge-write register file — eliminates RAW hazards without forwarding
@@ -31,7 +31,7 @@ Designed as part of a structured VLSI roadmap targeting RTL-to-GDSII implementat
 | Branch | 6 | BEQ, BNE, BLT, BGE, BLTU, BGEU |
 | Jump | 2 | JAL, JALR |
 | Upper Imm | 2 | LUI, AUIPC |
-| **Total** | **47** | |
+| **Total** | **37** | |
 
 ---
 
